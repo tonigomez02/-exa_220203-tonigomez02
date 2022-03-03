@@ -47,8 +47,7 @@ class ContactosController extends Controller
      */
     public function show($id)
     {
-        $contacto = Contacto::find($id);
-        return view("contactos.edit")->with("contacto", $contacto);
+
     }
 
     /**
@@ -59,7 +58,8 @@ class ContactosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contacto = Contacto::find($id);
+        return view("contactos.edit")->with("contacto", $contacto);
     }
 
     /**
