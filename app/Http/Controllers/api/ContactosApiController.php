@@ -39,7 +39,8 @@ class ContactosApiController extends Controller
      */
     public function show($id)
     {
-        //
+        $contacto = Contacto::find($id);
+        return $contacto;
     }
 
     /**
@@ -51,7 +52,10 @@ class ContactosApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contacto = Contacto::find($id);
+        $contacto = $contacto->fill($request->all());
+        $contacto->save();
+        return $contacto;
     }
 
     /**
@@ -62,6 +66,7 @@ class ContactosApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contacto = Contacto::find($id);
+        $contacto->delete();
     }
 }
