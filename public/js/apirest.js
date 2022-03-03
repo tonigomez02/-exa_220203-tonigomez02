@@ -1,3 +1,5 @@
+api_js_get()
+
 
 function api_js_get() {
     const xhttp = new XMLHttpRequest()
@@ -21,12 +23,29 @@ function api_js_get() {
         }
         document.getElementById("contentContacts").innerHTML = salida + "<br>"
     }
-    xhttp.open("GET", "/api/contactoApi", true)
+    xhttp.open("GET", "/api/contactosApi", true)
     xhttp.send()
 }
 
-function api_post(){
+function api_post() {
     let name = document.getElementById("nombre").value
     let telephone = document.getElementById("telefono").value
-    let price = document.getElementById("price").value
+    let num_libros = document.getElementById("num_libros").value
+    let date = document.getElementById("fecha_nacimiento").value
+
+    fetch("/api/contactosApi", {
+        method: "POST",
+        body: JSON.stringify({
+            "nombre": name,
+            "telefono": telephone,
+            "num_libros": num_libros,
+            "fecha_nacimiento": date
+        }),
+        headers: {
+            "Content-type": "application/vnd.api+json; charset=UTF-8",
+            'Accept': 'application/vnd.api+json'
+        }
+    })
+
+    window.location.href = "/"
 }
