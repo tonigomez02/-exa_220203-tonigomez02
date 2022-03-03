@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contacto;
 use Illuminate\Http\Request;
 
 class ContactosApiController extends Controller
@@ -14,7 +15,8 @@ class ContactosApiController extends Controller
      */
     public function index()
     {
-        //
+        $contactos = Contacto::all();
+        return $contactos;
     }
 
     /**
@@ -25,7 +27,8 @@ class ContactosApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contacto = Contacto::create($request->all());
+        return $contacto;
     }
 
     /**
