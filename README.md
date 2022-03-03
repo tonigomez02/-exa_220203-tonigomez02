@@ -1,5 +1,7 @@
 # Dirección remoto
 
+- http://agomez_exa.randion.es/
+
 # Archivo .env
 
 APP_NAME=Laravel  

@@ -25,6 +25,15 @@ function api_js_get() {
     }
     xhttp.open("GET", "/api/contactosApi", true)
     xhttp.send()
+
+
+
+    /*fetch("/api/contactosApi")
+        .then(response => response.json())
+        .then(contactos =>{
+            console.log(contactos);
+            //Aqui vendria el contentido después del xhttp.onload
+        })*/
 }
 
 function api_post() {
@@ -48,6 +57,19 @@ function api_post() {
     })
 
     window.location.href = "/"
+
+
+    /*const xhttp = new XMLHttpRequest()
+
+    xhttp.open("POST", "/api/contactosApi", true)
+    xhttp.setHeader("Content-type", "application/vnd.api+json; charset=UTF-8")
+    xhttp.setHeader('Accept', 'application/vnd.api+json')
+    xhttp.send(JSON.stringify({
+        "nombre": name,
+        "telefono": telephone,
+        "num_libros": num_libros,
+        "fecha_nacimiento": date
+    }))*/
 }
 
 function apiEdit(id) {
@@ -70,6 +92,20 @@ function apiEdit(id) {
         }
     })
     window.location.href = "/"
+
+
+
+    /*const xhttp = new XMLHttpRequest()
+
+    xhttp.open("PUT", `/api/contactosApi/${id}`, true)
+    xhttp.setHeader("Content-type", "application/vnd.api+json; charset=UTF-8")
+    xhttp.setHeader('Accept', 'application/vnd.api+json')
+    xhttp.send(JSON.stringify({
+        "nombre": name,
+        "telefono": telephone,
+        "num_libros": num_libros,
+        "fecha_nacimiento": date
+    }))*/
 }
 
 function api_js_delete(id) {
@@ -79,4 +115,15 @@ function api_js_delete(id) {
     }
     xhttp.open("DELETE", `/api/contactosApi/${id}`, true)
     xhttp.send()
+
+
+
+   /* fetch(`/api/contactosApi/${id}`, {
+        method: "DELETE"
+    })
+        .then(response => response.json())
+        .then(contacto =>{
+            console.log(contacto);
+            //api_js_get()
+        })*/
 }

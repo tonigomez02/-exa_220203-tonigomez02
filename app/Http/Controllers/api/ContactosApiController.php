@@ -68,5 +68,6 @@ class ContactosApiController extends Controller
     {
         $contacto = Contacto::find($id);
         $contacto->delete();
+        return $contacto;
     }
 }
