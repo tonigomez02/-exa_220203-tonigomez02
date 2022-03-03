@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Contacto;
 use Illuminate\Http\Request;
 
 class ContactosController extends Controller
@@ -13,7 +15,7 @@ class ContactosController extends Controller
      */
     public function index()
     {
-        //
+        return view("contactos.index");
     }
 
     /**
@@ -23,7 +25,7 @@ class ContactosController extends Controller
      */
     public function create()
     {
-        //
+        return view("contactos.create");
     }
 
     /**
@@ -45,7 +47,8 @@ class ContactosController extends Controller
      */
     public function show($id)
     {
-        //
+        $contacto = Contacto::find($id);
+        return view("contactos.edit")->with("contacto", $contacto);
     }
 
     /**

@@ -15,7 +15,7 @@
                     <th>Fecha de nacimiento</th>
                 </tr>
                 </thead>
-                <tbody id="contentArticles">
+                <tbody id="contentContacts">
 
                 </tbody>
             </table>
